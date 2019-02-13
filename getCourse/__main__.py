@@ -13,23 +13,28 @@ else:
 
 # action to get a single course or a list of all courses
 def main(params):
+    # check if list or detail
     if "course_id" in params:
         course_id = params['course_id']
+        # get course detail
         doc = db.get(course_id)
         if doc:
+            # return detail
             return {
                 'course': doc,
                 'success': 'true',
                 'params': params
             }
         else:
+            # no such course
             return {
                 'course_id': course_id,
-                'success': 'true',
+                'success': 'false',
                 'message': 'Course not found'
             }
     else:
         courses = []
+        # get list of all courses
         for docid in db.view('_all_docs'):
             courses.append(docid)
         return {

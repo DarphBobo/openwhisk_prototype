@@ -1,3 +1,4 @@
+# Action to filter "weekday" variatons of monday notations and transforms to tuesday.
 def main(params):
     weekday = params['weekday']
     if weekday == "Montag":

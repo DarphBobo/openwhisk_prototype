@@ -12,6 +12,7 @@ else:
 # action to delete a course from a DELETE-call. 
 def main(params):
     course_id = params['course_id']
+    # search doc
     doc = db.get(course_id)
     if doc:
         db.delete(doc)

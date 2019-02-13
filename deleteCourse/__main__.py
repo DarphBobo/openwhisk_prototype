@@ -9,6 +9,7 @@ if dbname in couchserver:
 else:
     db = couchserver.create(dbname)
 
+# action to delete a course from a DELETE-call. 
 def main(params):
     course_id = params['course_id']
     doc = db.get(course_id)

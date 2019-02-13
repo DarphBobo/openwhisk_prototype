@@ -11,6 +11,7 @@ if dbname in couchserver:
 else:
     db = couchserver.create(dbname)
 
+# action to get a single course or a list of all courses
 def main(params):
     if "course_id" in params:
         course_id = params['course_id']

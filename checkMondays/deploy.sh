@@ -3,7 +3,7 @@ mkdir tmp-build
 cp *.py tmp-build/
 
 # install dependencies
-pip3 install dnspython couchdb -t tmp-build/
+pip3 install dnspython -t tmp-build/
 
 # zip
 cd tmp-build

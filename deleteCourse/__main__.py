@@ -1,6 +1,11 @@
 import couchdb
 from couchdb import Server
 
+#
+# This was part of a student project the Munich University of Applied Sciences.
+# https://github.com/DarphBobo/openwhisk_prototype
+#
+
 couchserver = Server("http://172.18.0.12:5984")
 
 dbname = "course"

@@ -8,7 +8,8 @@ if dbname in couchserver:
     db = couchserver[dbname]
 else:
     db = couchserver.create(dbname)
-
+    
+# methode to create a new course from POST-call
 def main(params):
     course_id = params['course_id']
     topic = params['topic']

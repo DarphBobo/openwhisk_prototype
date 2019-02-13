@@ -3,7 +3,7 @@ Spike for OpenWhisk implementation for a language learning platform.
 
 ## Course-Endpoints:
 All Course-Actions are reachable on the endpoint `/courses `
-###createCourse
+### createCourse
 **POST**-call to create a new course.
  
  Parameters:
@@ -17,13 +17,13 @@ All Course-Actions are reachable on the endpoint `/courses `
     "topic": "Spanisch für Anfänger",
     "weekday": "Monday"
 
-###deleteCourse
+### deleteCourse
 **DELETE**-call to delete a existing course. 
 
 Parameters:
 
 `    "course_id": "3"`
-###getCourse
+### getCourse
 **GET**-call to get all courses or the details of a specific course.
 
 Parameters:
@@ -32,7 +32,7 @@ empty or only the course id
 
 `    "course_id": "3"`
 
-###updateCourse
+### updateCourse
 **PUT**-call to _update_ an existing course.
 
     "course_id": "3",                               
@@ -46,7 +46,7 @@ empty or only the course id
 
 The parameter "course_id" must be an existing ID in the course database. 
 
-###checkMondays
+### checkMondays
 reachable on the endpoint `/courses/forgetMondays`
 
 Demonstration of the function-sequenece. Works with the same parameters like the createCourse-Action and modifies the "weekday"-parameter (Nobody likes mondays... lets start on tuesday). 

@@ -8,7 +8,8 @@ if dbname in couchserver:
     db = couchserver[dbname]
 else:
     db = couchserver.create(dbname)
-
+    
+# action to update an existing course from  
 def main(params):
     course_id = params['course_id']
     topic = params['topic']
@@ -19,8 +20,10 @@ def main(params):
     start_date = params['start_date']
     end_date = params['end_date']
     
+    # get course by id
     doc = db.get(course_id)
     
+    # update fields
     if doc:
         if topic:
             doc["topic"] = topic
@@ -36,17 +39,12 @@ def main(params):
             doc["start_date"] = start_date
         if end_date:
             doc["end_date"] = end_date
-            
-        db.save(doc)
+        # persist
+        doc_id, doc_rev = db.save(doc)
         return {
             'course_id': course_id,
-            'topic': topic,
-            "description": description,
-            "duration": duration,
-            "weekday": weekday,
-            "time": time,
-            "start_date": start_date,
-            "end_date": end_date,
+            'doc_id': doc_id,
+            "doc_rev": doc_rev,
             'success': 'true'
         }
     else:
